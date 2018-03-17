@@ -38,6 +38,7 @@ class WebhooksController < ApplicationController
       Rails.logger.info "Found Account ID #{account}"
       account.plus_funds params[:amount].to_f, reason: Account::TIKI, ref: self
       render :json => {:status => "True"}
+      return
     end
       render :json => {:status => "Please pass user #{params[:user]}"}
   end
