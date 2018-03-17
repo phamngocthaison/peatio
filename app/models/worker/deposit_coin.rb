@@ -105,7 +105,7 @@ module Worker
     end
 
     def get_total_transaction(channel, address)
-      channel.currency_obj.api.getreceivedbyaddress(address)
+      # channel.currency_obj.api.getreceivedbyaddress(address)
     end
 
     def get_raw_eth(txid)
