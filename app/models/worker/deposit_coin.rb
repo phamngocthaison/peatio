@@ -21,7 +21,7 @@ module Worker
           total = get_total_transaction(channel, detail[:address])
           if raw[:confirmations] > 0 and channel.currency_obj.code =='tkc'
             data = {txid: txid, amount: detail[:amount], confirmations: raw[:confirmations], total: total}
-            AMQPQueue.enqueue(:total_transaction, address: detail[:address], data: data)
+            AMQPQueue.enqueue(:total_transaction, data)
           end
           deposit!(channel, txid, i, raw, detail)
         end
