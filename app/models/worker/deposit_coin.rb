@@ -72,7 +72,7 @@ module Worker
         end
 
         return if PaymentTransaction::Normal.where(txid: txid, txout: txout).first
-
+        Rails.logger.info "Deposit tx: #{txid}, confirmation: #{raw[:confirmations]}"
         tx = PaymentTransaction::Normal.create! \
         txid: txid,
         txout: txout,
