@@ -19,8 +19,10 @@ module Worker
         raw[:details].each_with_index do |detail, i|
           detail.symbolize_keys!
           total = get_total_transaction(channel, [:address])
-          data = {address: detail[:address], txid: txid, amount: detail[:amount], confirmations: raw[:confirmations], total: total}
-          # AMQPQueue.enqueue(:total_transaction, address: detail[:address], data: data)
+          if raw[:confirmations] > 0 and channel.currency_obj =='tkc'
+            data = {address: detail[:address], txid: txid, amount: detail[:amount], confirmations: raw[:confirmations], total: total}
+            AMQPQueue.enqueue(:total_transaction, address: detail[:address], data: data)
+          end
           deposit!(channel, txid, i, raw, detail)
         end
       end
@@ -72,7 +74,7 @@ module Worker
         end
 
         return if PaymentTransaction::Normal.where(txid: txid, txout: txout).first
-        Rails.logger.info "Deposit tx: #{txid}, confirmation: #{raw[:confirmations]}"
+
         tx = PaymentTransaction::Normal.create! \
         txid: txid,
         txout: txout,
