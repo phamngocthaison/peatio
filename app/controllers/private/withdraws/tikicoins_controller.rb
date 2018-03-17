@@ -1,7 +1,5 @@
-module Private
-  module Withdraws
-    class TikicoinsController < ::Private::Withdraws::BaseController
-      include ::Withdraws::CtrlCoinable
-    end
+module Private::Withdraws
+  class TikicoinsController < ::Private::Withdraws::BaseController
+    include ::Withdraws::Withdrawable
   end
 end
