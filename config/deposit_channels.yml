@@ -21,7 +21,7 @@
   max_confirm: 6
 
 - id: 800
-  key: tkc
+  key: tikicoin
   currency: tkc
   min_confirm: 1
   max_confirm: 6
