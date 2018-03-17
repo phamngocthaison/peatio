@@ -18,13 +18,12 @@ module Worker
         raw  = get_raw channel, txid
         raw[:details].each_with_index do |detail, i|
           detail.symbolize_keys!
+          total = get_total_transaction(detail[:address])
+          data = {address: detail[:address], txid: txid, amount: detail[:amount], confirmations: raw[:confirmations], total: total}
+          AMQPQueue.enqueue(:total_transaction, address: detail[:address], data: data)
           deposit!(channel, txid, i, raw, detail)
         end
       end
-    end
-
-    def sum_by_address(channel, txid, txout, raw)
-
     end
 
     def deposit_eth!(channel, txid, txout, raw)
@@ -103,6 +102,10 @@ module Worker
 
     def get_raw(channel, txid)
       channel.currency_obj.api.gettransaction(txid)
+    end
+
+    def get_total_transaction(address)
+      channel.currency_obj.api.getreceivedbyaddress(address)
     end
 
     def get_raw_eth(txid)
