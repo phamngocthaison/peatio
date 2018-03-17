@@ -19,3 +19,9 @@
   currency: eth
   min_confirm: 1
   max_confirm: 6
+
+- id: 800
+  key: tkc
+  currency: tkc
+  min_confirm: 1
+  max_confirm: 6
