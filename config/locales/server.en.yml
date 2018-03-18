@@ -470,7 +470,7 @@ en:
     satoshi:
       key: Block Chain
       title: Bitcoin Deposits
-      intro: Deposit bitcoin from your own wallet address to Peatio account
+      intro: Deposit bitcoin from your own wallet address to Tiki Wallet account
       latency: 1 confirmation
       transfer: Manual
       go: Deposit
@@ -635,7 +635,7 @@ en:
       view_open_tickets: View open tickets
     account_versions:
       index:
-        description: Every transaction and every penny of income in Peatio are well
+        description: Every transaction and every penny of income in Tiki Wallet are well
           documented and exhaustive.
     api_tokens:
       user_tokens:
@@ -1046,15 +1046,15 @@ en:
       panel: Login
       new:
         title: Login my account
-        intro: Login Peatio now for you to exchange.
+        intro: Login now for you to exchange.
       failure:
         title: Login my account
-        intro: Login Peatio now for you to exchange.
+        intro: Login now for you to exchange.
     identities:
       panel: Create Account
       new:
         title: Create My Account
-        intro: This will be your only ID on Peatio which is necessary for your exchange
+        intro: This will be your only ID which is necessary for your exchange
           , deposit and withdrawal . please fill it out carefully.
       edit:
         panel: My Account
@@ -1287,11 +1287,11 @@ en:
   doorkeeper:
     scopes:
       profile: Read your basic profile (e.g. name, email) and account balances
-      history: Read your trade history
+      history: Read your trade histoy
       trade: Submit and cancel orders
     authorizations:
       new:
-        title: Peatio Application Authorization
+        title: Tiki Walle Application Authorization
         authorize_html: Authorize <strong class='text-info'>%{name}</strong> to use
           your account?
         scopes: 'This application will be able to:'
@@ -1520,9 +1520,9 @@ en:
   gon:
     ask: Ask
     bid: Bid
-    brand: Peatio Exchange
+    brand: Tiki Wallet
     notification:
-      title: Peatio Exchange
+      title: Tiki Wallet
       enabled: Notification enabled.
       new_trade: "%{kind} order#%{id} executed at %{price} %{quote_unit} for %{volume} %{base_unit}。"
   back: Back
@@ -1729,9 +1729,9 @@ en:
     application:
       close: Close
     meta:
-      page_title: Peatio - The Opensource Cryptocurrency Exchange
-      page_description: Peatio - The Opensource Cryptocurrency Exchange
-      page_keywords: Peatio,Opensource,Exchange,Cryptocurrency
+      page_title: Tiki Wallet
+      page_description: Tiki Wallet - Shopping
+      page_keywords: TikiWallet
   members:
     edit:
       name: Please fill out the application.
@@ -1815,7 +1815,7 @@ en:
       edit:
         submit: Disable
         warning: 'Tip: If you have lost your Two-Factor Authentication by some reason
-          and can''t login your Peatio account, please contact our online customer
+          and can''t login your Tiki Wallet account, please contact our online customer
           service.'
       show:
         step-1: Step 1
